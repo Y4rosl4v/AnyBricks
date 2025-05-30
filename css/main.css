@@ -77,7 +77,6 @@ header nav ul li:not(.active) a:hover {
 }
 
 .hero {
-    padding-bottom: 1000px;
     padding-top: 60px;
     padding-left: 250px;
 }
@@ -110,4 +109,103 @@ header nav ul li:not(.active) a:hover {
     top: 180px;
     width: 700px;
     right: 300px;
+}
+
+.buy {
+    padding-top: 30px;
+    padding-left: 250px
+}
+
+.buy--info {
+    width: 1300px;
+    background-color: red;
+    text-align: left;
+    padding-left: 50px;
+    height: 250px;
+    border-radius: 40px;
+}
+
+.buy--info a {
+    color: yellow;
+    font-size: 46px;
+    display: inline-block;
+    text-align: top;
+    padding-top: 90px;
+}
+
+.buy--info a:hover {
+    border-bottom: 5px solid yellow;
+}
+
+.buy img {
+    position: absolute;
+    width: 300px;
+    top: 640px;
+    left: 1100px;
+}
+
+.sell {
+    padding-top: 30px;
+    padding-left: 250px
+}
+
+.sell--info {
+    width: 1300px;
+    background-color: red;
+    text-align: left;
+    padding-left: 50px;
+    height: 250px;
+    border-radius: 40px;
+}
+
+.sell--info a {
+    color: yellow;
+    font-size: 43px;
+    display: inline-block;
+    text-align: top;
+    padding-top: 90px;
+}
+
+.sell--info a:hover {
+    border-bottom: 5px solid yellow;
+}
+
+.sell img {
+    position: absolute;
+    width: 400px;
+    top: 900px;
+    left: 1050px;
+}
+
+.summer {
+    padding-top: 30px;
+    padding-bottom: 1000px;
+    padding-left: 250px;
+}
+
+.summer--info {
+    width: 1300px;
+    background-color: rgb(209, 0, 209);
+    text-align: left;
+    padding-left: 50px;
+    height: 190px;
+    border-radius: 40px;
+}
+
+.summer--info a {
+    color: white;
+    font-size: 50px;
+    display: inline-block;
+    text-align: top;
+    padding-top: 60px;
+}
+
+.summer--info a:hover {
+    border-bottom: 5px solid white;
+}
+
+.summer img {
+    position: absolute;
+    left: 1000px;
+    top: 1150px;
 }
