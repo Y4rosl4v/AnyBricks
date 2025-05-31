@@ -84,7 +84,10 @@ header nav ul li:not(.active) a:hover {
 
 .hero {
     padding-top: 60px;
-    padding-left: 250px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
 }
 
 .hero--info {
@@ -112,14 +115,21 @@ header nav ul li:not(.active) a:hover {
 
 .hero img {
     position: absolute;
-    top: 180px;
-    width: 700px;
-    right: 300px;
+    top: 55%;
+    transform: translateY(-50%);
+    width: auto; /* Меняем фиксированную ширину на auto */
+    height: 80%; /* Задаем высоту относительно родителя */
+    max-width: 60%; /* Ограничиваем максимальную ширину */
+    right: 10%;
+    z-index: 2;
 }
 
 .buy {
     padding-top: 30px;
-    padding-left: 250px
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
 }
 
 .buy--info {
@@ -145,14 +155,21 @@ header nav ul li:not(.active) a:hover {
 
 .buy img {
     position: absolute;
-    width: 300px;
-    top: 640px;
-    left: 1100px;
+    top: 55%;
+    transform: translateY(-50%);
+    width: auto; /* Меняем фиксированную ширину на auto */
+    height: 80%; /* Задаем высоту относительно родителя */
+    max-width: 60%; /* Ограничиваем максимальную ширину */
+    right: 20%;
+    z-index: 2;
 }
 
 .sell {
     padding-top: 30px;
-    padding-left: 250px
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
 }
 
 .sell--info {
@@ -178,15 +195,22 @@ header nav ul li:not(.active) a:hover {
 
 .sell img {
     position: absolute;
-    width: 400px;
-    top: 900px;
-    left: 1050px;
+    top: 55%;
+    transform: translateY(-50%);
+    width: auto; /* Меняем фиксированную ширину на auto */
+    height: 90%; /* Задаем высоту относительно родителя */
+    max-width: 40%; /* Ограничиваем максимальную ширину */
+    right: 18%;
+    z-index: 2;
 }
 
 .summer {
     padding-top: 30px;
     padding-bottom: 1000px;
-    padding-left: 250px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
 }
 
 .summer--info {
@@ -212,6 +236,11 @@ header nav ul li:not(.active) a:hover {
 
 .summer img {
     position: absolute;
-    left: 1000px;
-    top: 1150px;
+    top: 10%;
+    transform: translateY(-50%);
+    width: auto; /* Меняем фиксированную ширину на auto */
+    height: 20%; /* Задаем высоту относительно родителя */
+    max-width: 30%; /* Ограничиваем максимальную ширину */
+    right: 17%;
+    z-index: 2;
 }
