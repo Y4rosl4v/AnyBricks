@@ -35,13 +35,13 @@ img {
 header {
     padding: 30px 0;
     height: 60px;
-    background-color: red;
+    background-color: rgb(158, 24, 24);
 }
 
 header .logo {
     text-transform: uppercase;
     font-size: 40px;
-    color: yellow;
+    color: rgb(223, 223, 60);
     text-align: left;
     padding-left: 60px;
 }
@@ -65,7 +65,7 @@ header nav ul li {
 }
 
 header nav ul li a {
-    color: yellow;
+    color: rgb(223, 223, 60);
 }
 
 header nav ul li.active::after {
@@ -78,7 +78,7 @@ header nav ul li.active::after {
 }
 
 header nav ul li:not(.active) a:hover {
-    border-bottom: 5px solid yellow
+    border-bottom: 5px solid rgb(223, 223, 60)
 }
 
 .search-bar input {
@@ -97,8 +97,8 @@ header nav ul li:not(.active) a:hover {
 
 .hero--info {
     width: 1300px;
-    background-color: yellow;
-    color: red;
+    background-color: rgb(223, 223, 60);
+    color: rgb(158, 24, 24);
     text-align: left;
     padding-left: 50px;
     height: 400px;
@@ -128,7 +128,7 @@ header nav ul li:not(.active) a:hover {
 
 .buy--info {
     width: 1300px;
-    background-color: red;
+    background-color: rgb(158, 24, 24);
     text-align: left;
     padding-left: 50px;
     height: 250px;
@@ -136,7 +136,7 @@ header nav ul li:not(.active) a:hover {
 }
 
 .buy--info a {
-    color: yellow;
+    color: rgb(223, 223, 60);
     font-size: 46px;
     display: inline-block;
     text-align: top;
@@ -144,7 +144,7 @@ header nav ul li:not(.active) a:hover {
 }
 
 .buy--info a:hover {
-    border-bottom: 5px solid yellow;
+    border-bottom: 5px solid rgb(223, 223, 60);
 }
 
 .sell {
@@ -157,7 +157,7 @@ header nav ul li:not(.active) a:hover {
 
 .sell--info {
     width: 1300px;
-    background-color: red;
+    background-color: rgb(158, 24, 24);
     text-align: left;
     padding-left: 50px;
     height: 250px;
@@ -165,7 +165,7 @@ header nav ul li:not(.active) a:hover {
 }
 
 .sell--info a {
-    color: yellow;
+    color: rgb(223, 223, 60);
     font-size: 43px;
     display: inline-block;
     text-align: top;
@@ -173,7 +173,7 @@ header nav ul li:not(.active) a:hover {
 }
 
 .sell--info a:hover {
-    border-bottom: 5px solid yellow;
+    border-bottom: 5px solid rgb(223, 223, 60);
 }
 
 .summer {
@@ -187,7 +187,7 @@ header nav ul li:not(.active) a:hover {
 
 .summer--info {
     width: 1300px;
-    background-color: rgb(209, 0, 209);
+    background-color: rgb(168, 9, 168);
     text-align: left;
     padding-left: 50px;
     height: 190px;
