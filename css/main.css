@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
 
+:root {
+    --header-height-mobile: 80px;
+    --padding-mobile: 20px;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -113,17 +118,6 @@ header nav ul li:not(.active) a:hover {
     padding-top: 80px;
 }
 
-.hero img {
-    position: absolute;
-    top: 55%;
-    transform: translateY(-50%);
-    width: auto; /* Меняем фиксированную ширину на auto */
-    height: 80%; /* Задаем высоту относительно родителя */
-    max-width: 60%; /* Ограничиваем максимальную ширину */
-    right: 10%;
-    z-index: 2;
-}
-
 .buy {
     padding-top: 30px;
     display: flex;
@@ -153,17 +147,6 @@ header nav ul li:not(.active) a:hover {
     border-bottom: 5px solid yellow;
 }
 
-.buy img {
-    position: absolute;
-    top: 55%;
-    transform: translateY(-50%);
-    width: auto; /* Меняем фиксированную ширину на auto */
-    height: 80%; /* Задаем высоту относительно родителя */
-    max-width: 60%; /* Ограничиваем максимальную ширину */
-    right: 20%;
-    z-index: 2;
-}
-
 .sell {
     padding-top: 30px;
     display: flex;
@@ -191,17 +174,6 @@ header nav ul li:not(.active) a:hover {
 
 .sell--info a:hover {
     border-bottom: 5px solid yellow;
-}
-
-.sell img {
-    position: absolute;
-    top: 55%;
-    transform: translateY(-50%);
-    width: auto; /* Меняем фиксированную ширину на auto */
-    height: 90%; /* Задаем высоту относительно родителя */
-    max-width: 40%; /* Ограничиваем максимальную ширину */
-    right: 18%;
-    z-index: 2;
 }
 
 .summer {
@@ -234,13 +206,129 @@ header nav ul li:not(.active) a:hover {
     border-bottom: 5px solid white;
 }
 
-.summer img {
-    position: absolute;
-    top: 10%;
-    transform: translateY(-50%);
-    width: auto; /* Меняем фиксированную ширину на auto */
-    height: 20%; /* Задаем высоту относительно родителя */
-    max-width: 30%; /* Ограничиваем максимальную ширину */
-    right: 17%;
-    z-index: 2;
+@media (max-width: 1200px) {
+    .hero--info, .buy--info, .sell--info, .summer--info {
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 15px 0;
+        position: center;
+    }
+    
+    header .logo {
+        font-size: 30px;
+        padding-left: var(--padding-mobile);
+        display: block;
+        text-align: center;
+    }
+    
+    header nav {
+        float: none;
+        width: 100%;
+        padding: 15px var(--padding-mobile) 0;
+    }
+    
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+    
+    header nav ul li {
+        display: block;
+        margin: 5px 0;
+    }
+    
+    .search-bar input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .hero {
+        padding-top: 30px;
+    }
+    
+    .hero--info {
+        height: auto;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    .hero--info h2 {
+        width: 100%;
+        font-size: 24px;
+        padding-top: 20px;
+    }
+    
+    .hero--info h1 {
+        font-size: 50px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    
+    .buy--info, .sell--info, .summer--info {
+        height: auto;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    .buy--info a, .sell--info a, .summer--info a {
+        font-size: 24px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        display: block;
+    }
+    
+    .summer {
+        padding-bottom: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero--info h1 {
+        font-size: 40px;
+    }
+    
+    .buy--info a, .sell--info a, .summer--info a {
+        font-size: 20px;
+    }
+}
+
+.desktop-only {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .desktop-only {
+        display: block;
+        position: absolute;
+        top: 55%;
+        transform: translateY(-50%);
+        width: auto;
+        height: 80%;
+        max-width: 60%;
+        right: 10%;
+        z-index: 2;
+    }
+    
+    .buy img.desktop-only {
+        right: 20%;
+    }
+    
+    .sell img.desktop-only {
+        height: 90%;
+        max-width: 40%;
+        right: 18%;
+    }
+    
+    .summer img.desktop-only {
+        top: 10%;
+        height: 20%;
+        max-width: 30%;
+        right: 17%;
+    }
 }
