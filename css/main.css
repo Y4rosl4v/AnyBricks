@@ -216,26 +216,30 @@ header nav ul li:not(.active) a:hover {
     header {
         height: auto;
         padding: 15px 0;
-        position: center;
+        width: 100%;
+        box-sizing: border-box;
     }
     
     header .logo {
         font-size: 30px;
-        padding-left: var(--padding-mobile);
+        padding-left: 0;
         display: block;
         text-align: center;
+        width: 100%;
     }
     
     header nav {
         float: none;
         width: 100%;
         padding: 15px var(--padding-mobile) 0;
+        box-sizing: border-box;
     }
     
     header nav ul {
         flex-direction: column;
         align-items: center;
         padding: 0;
+        width: 100%;
     }
     
     header nav ul li {
@@ -254,33 +258,40 @@ header nav ul li:not(.active) a:hover {
     
     .hero--info {
         height: auto;
-        padding: 20px;
+        min-height: 150px;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         text-align: center;
     }
     
     .hero--info h2 {
+        font-size: 20px;
         width: 100%;
-        font-size: 24px;
-        padding-top: 20px;
+        padding-top: 0;
+        margin-bottom: 10px;
     }
     
     .hero--info h1 {
-        font-size: 50px;
-        padding-top: 30px;
-        padding-bottom: 30px;
+        font-size: 32px;
+        padding-top: 0;
     }
     
     .buy--info, .sell--info, .summer--info {
-        height: auto;
-        padding: 20px;
-        text-align: center;
+        height: 80px;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     
     .buy--info a, .sell--info a, .summer--info a {
-        font-size: 24px;
-        padding-top: 20px;
-        padding-bottom: 20px;
-        display: block;
+        font-size: 20px;
+        padding: 0;
+        text-align: center;
+        width: 100%;
     }
     
     .summer {
@@ -289,12 +300,16 @@ header nav ul li:not(.active) a:hover {
 }
 
 @media (max-width: 480px) {
+    .hero--info, .buy--info, .sell--info, .summer--info {
+        min-height: 120px;
+    }
+
     .hero--info h1 {
-        font-size: 40px;
+        font-size: 28px;
     }
     
     .buy--info a, .sell--info a, .summer--info a {
-        font-size: 20px;
+        font-size: 18px;
     }
 }
 
