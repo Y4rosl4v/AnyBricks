@@ -346,7 +346,7 @@ header nav ul li:not(.active) a:hover {
     .summer img.desktop-only {
         position: absolute;
         top: 40px; /* Фиксированная позиция от верха */
-        right: 17%;
+        right: 19%;
         width: 400px; /* Фиксированная ширина вместо % */
         height: auto; /* Сохраняем пропорции */
         z-index: 2;
