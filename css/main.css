@@ -178,11 +178,12 @@ header nav ul li:not(.active) a:hover {
 
 .summer {
     padding-top: 30px;
-    padding-bottom: 1000px;
+    padding-bottom: 50px;
     display: flex;
     justify-content: center;
     position: relative;
     width: 100%;
+    min-height: 190px;
 }
 
 .summer--info {
@@ -192,6 +193,8 @@ header nav ul li:not(.active) a:hover {
     padding-left: 50px;
     height: 190px;
     border-radius: 40px;
+    position: relative;
+    z-index: 1;
 }
 
 .summer--info a {
@@ -295,7 +298,7 @@ header nav ul li:not(.active) a:hover {
     }
     
     .summer {
-        padding-bottom: 50px;
+        padding-bottom: 10px;
     }
 }
 
@@ -341,9 +344,67 @@ header nav ul li:not(.active) a:hover {
     }
     
     .summer img.desktop-only {
-        top: 10%;
-        height: 20%;
-        max-width: 30%;
+        position: absolute;
+        top: 40px; /* Фиксированная позиция от верха */
         right: 17%;
+        width: 400px; /* Фиксированная ширина вместо % */
+        height: auto; /* Сохраняем пропорции */
+        z-index: 2;
+        transform: none;
+    }
+}
+
+/*Series*/
+
+.series {
+    padding: 0px 0;
+    padding-bottom: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Центрируем по вертикали */
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.series .names {
+    margin: 0 50px; /* Увеличил расстояние между изображениями */
+    flex: 0 1 auto;
+}
+
+.series .names img {
+    width: 220px; /* Увеличил размер изображений */
+    height: auto; /* Сохраняем пропорции */
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.series .names img:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 1200px) {
+    .series .names {
+        margin: 0 30px; /* Уменьшаем отступы на планшетах */
+    }
+    
+    .series .names img {
+        width: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    .series {
+        flex-direction: column;
+        padding: 30px 0;
+    }
+    
+    .series .names {
+        margin: 20px 0;
+    }
+    
+    .series .names img {
+        width: 200px; /* На мобильных можно оставить крупнее */
     }
 }
