@@ -19,7 +19,7 @@
                 <li class="active"><a href="#">ГЛАВНАЯ</a></li>
                 <li><a href="#">КАТАЛОГ</a></li>
                 <li><a href="#">СКИДКИ</a></li>
-                <li><a href="#">АККАУНТ</a></li>
+                <li><a href="account.html" id="account-text">АККАУНТ</a></li>
                 <li><a href="#">КОРЗИНА</a></li>
             </ul>
         </nav>
@@ -84,6 +84,17 @@
     </div>
 
     </div>
+    <script>
+    // Проверка авторизации при загрузке любой страницы
+    document.addEventListener('DOMContentLoaded', function() {
+        const user = JSON.parse(localStorage.getItem('currentUser'));
+        const accountText = document.getElementById('account-text');
+        
+        if (user) {
+            accountText.textContent = user.name; // Показываем имя вместо "АККАУНТ"
+        }
+    });
+</script>
 </body>
 
 </html>
