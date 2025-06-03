@@ -432,7 +432,7 @@ header nav ul li:not(.active) a:hover {
     max-width: 1300px;
     margin: 0 auto;
     text-align: center;
-    padding-bottom: 500px;
+    padding-bottom: 70px;
     pointer-events: none;
 }
 
@@ -454,5 +454,86 @@ header nav ul li:not(.active) a:hover {
 @media (max-width: 480px) {
     .about h3 {
         font-size: 20px;
+    }
+}
+
+/* Other */
+
+/* Other container styles */
+.other.container {
+    padding: 100px 0 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.other.container .copy {
+    font-size: 18px;
+    color: #333;
+}
+
+.other.container .other-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+}
+
+.other.container .other-links li {
+    display: flex;
+}
+
+.other.container .other-links a {
+    color: #000;
+    font-size: 18px;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 5px;
+    transition: all 0.3s ease;
+}
+
+.other.container .other-links a:hover::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    animation: underline 0.3s ease;
+}
+
+@keyframes underline {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .other.container {
+        flex-direction: column;
+        gap: 20px;
+        padding: 50px 20px;
+        text-align: center;
+    }
+    
+    .other.container .other-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .other.container .copy,
+    .other.container .other-links a {
+        font-size: 16px;
+    }
+    
+    .other.container .other-links a:hover::after {
+        width: 50%;
+        left: 25%;
     }
 }
