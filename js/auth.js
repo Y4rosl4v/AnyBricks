@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Обработчик кнопки выхода
     document.getElementById('logout-btn')?.addEventListener('click', function() {
         localStorage.removeItem('currentUser');
+        localStorage.removeItem('basket');
         window.location.href = 'account.html';
     });
 

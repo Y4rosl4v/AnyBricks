@@ -1,3 +1,16 @@
+// Функция для проверки авторизации
+function checkAuth() {
+    return localStorage.getItem('currentUser') !== null;
+}
+
+// Функция для перенаправления на страницу входа
+function redirectToLogin() {
+    if (!checkAuth() && window.location.pathname.includes('basket.html')) {
+        alert('Пожалуйста, войдите в систему, чтобы получить доступ к корзине');
+        window.location.href = 'account.html';
+    }
+}
+
 // Функция для обновления счетчика корзины в шапке
 function updateBasketCounter() {
     const basket = JSON.parse(localStorage.getItem('basket')) || [];
@@ -26,7 +39,10 @@ function updateBasketCounter() {
 }
 
 // Обновляем счетчик при загрузке страницы
-document.addEventListener('DOMContentLoaded', updateBasketCounter);
+document.addEventListener('DOMContentLoaded', function() {
+    updateBasketCounter();
+    redirectToLogin();
+});
 
 // Обновляем счетчик при изменении localStorage (если корзина изменилась в другой вкладке)
 window.addEventListener('storage', function(event) {

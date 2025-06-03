@@ -1,4 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
+    if (!checkAuth()) {
+        document.getElementById('basket-items').innerHTML = `
+            <div class="auth-required">
+                <p>Для просмотра корзины необходимо войти в систему</p>
+                <a href="account.html" class="auth-btn">ВОЙТИ</a>
+            </div>
+        `;
+        document.getElementById('basket-summary').style.display = 'none';
+        return;
+    }
+
     const basketItems = JSON.parse(localStorage.getItem('basket')) || [];
     const basketItemsContainer = document.getElementById('basket-items');
     const basketSummaryContainer = document.getElementById('basket-summary');

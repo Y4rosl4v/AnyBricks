@@ -43,6 +43,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Функция добавления в корзину
 function addToBasket(productId) {
+    if (!checkAuth()) {
+        alert('Пожалуйста, войдите в систему, чтобы добавить товары в корзину');
+        window.location.href = 'account.html';
+        return;
+    }
+
     let basket = JSON.parse(localStorage.getItem('basket')) || [];
     const product = products.find(p => p.id === productId);
     
