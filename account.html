@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/auth.css">
 </head>
+
 <body>
     <div class="wrapper">
         <header class="container">
@@ -72,6 +73,18 @@
 
             <div id="auth-message" class="auth-message"></div>
         </div>
+
+        <div class="user-profile" id="userProfile">
+    <div class="profile-header">
+        <h2>ВАШ ПРОФИЛЬ</h2>
+    </div>
+    <div class="profile-info">
+        <p><strong>Имя:</strong> <span id="profile-name"></span></p>
+        <p><strong>Email:</strong> <span id="profile-email"></span></p>
+    </div>
+    <button id="logout-btn" class="auth-btn">ВЫЙТИ</button>
+</div>
+
     </div>
 
     <script src="js/auth.js"></script>

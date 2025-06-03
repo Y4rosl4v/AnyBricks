@@ -1,4 +1,28 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Проверяем, авторизован ли пользователь
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    const authContainer = document.querySelector('.auth-container');
+    const userProfile = document.getElementById('userProfile');
+    
+    if (currentUser) {
+        // Показываем профиль и скрываем формы авторизации
+        if (authContainer) authContainer.style.display = 'none';
+        if (userProfile) {
+            userProfile.style.display = 'block';
+            document.getElementById('profile-name').textContent = currentUser.name;
+            document.getElementById('profile-email').textContent = currentUser.email;
+        }
+    } else {
+        if (authContainer) authContainer.style.display = 'block';
+        if (userProfile) userProfile.style.display = 'none';
+    }
+
+    // Обработчик кнопки выхода
+    document.getElementById('logout-btn')?.addEventListener('click', function() {
+        localStorage.removeItem('currentUser');
+        window.location.href = 'account.html';
+    });
+
     // Переключение между вкладками
     const tabs = document.querySelectorAll('.auth-tab');
     tabs.forEach(tab => {
@@ -45,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
-        // Сохраняем пользователя (в реальном приложении пароль нужно хешировать!)
+        // Сохраняем пользователя
         users.push({ name, email, password });
         localStorage.setItem('users', JSON.stringify(users));
         
@@ -75,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Перенаправляем на главную страницу через 1 секунду
             setTimeout(() => {
-                window.location.href = 'index.html';
+                window.location.href = 'account.html';
             }, 1000);
         } else {
             showMessage('Неверный email или пароль', 'error');

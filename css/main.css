@@ -34,16 +34,16 @@ img {
 }
 
 header {
-    position: fixed; /* Фиксированное позиционирование */
-    top: 0; /* Прижимаем к верхнему краю */
+    position: fixed;
+    top: 0;
     left: 0;
     right: 0;
-    width: 100%; /* На всю ширину */
-    z-index: 1000; /* Чтобы шапка была поверх других элементов */
+    width: 100%;
+    z-index: 1000;
     padding: 30px 0;
     height: 60px;
     background-color: rgb(158, 24, 24);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Необязательно: добавляет тень для эффекта "плавающей" шапки */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 header .logo {
@@ -225,11 +225,11 @@ header nav ul li:not(.active) a:hover {
 
 @media (max-width: 768px) {
     .wrapper {
-        padding-top: 0; /* Важно убрать отступ */
+        padding-top: 0;
     }
 
     header {
-        position: relative; /* Изменяем на relative вместо static */
+        position: relative;
         top: auto;
         padding: 15px 0;
         height: auto;
@@ -358,10 +358,10 @@ header nav ul li:not(.active) a:hover {
     
     .summer img.desktop-only {
         position: absolute;
-        top: 40px; /* Фиксированная позиция от верха */
+        top: 40px;
         right: 19%;
-        width: 400px; /* Фиксированная ширина вместо % */
-        height: auto; /* Сохраняем пропорции */
+        width: 400px;
+        height: auto;
         z-index: 2;
         transform: none;
     }
@@ -374,7 +374,7 @@ header nav ul li:not(.active) a:hover {
     padding-bottom: 10px;
     display: flex;
     justify-content: center;
-    align-items: center; /* Центрируем по вертикали */
+    align-items: center;
     width: 100%;
     max-width: 1300px;
     margin: 0 auto;
@@ -382,13 +382,13 @@ header nav ul li:not(.active) a:hover {
 }
 
 .series .names {
-    margin: 0 50px; /* Увеличил расстояние между изображениями */
+    margin: 0 50px;
     flex: 0 1 auto;
 }
 
 .series .names img {
-    width: 220px; /* Увеличил размер изображений */
-    height: auto; /* Сохраняем пропорции */
+    width: 220px;
+    height: auto;
     display: block;
     transition: transform 0.3s ease;
 }
@@ -399,7 +399,7 @@ header nav ul li:not(.active) a:hover {
 
 @media (max-width: 1200px) {
     .series .names {
-        margin: 0 30px; /* Уменьшаем отступы на планшетах */
+        margin: 0 30px;
     }
     
     .series .names img {
@@ -418,7 +418,7 @@ header nav ul li:not(.active) a:hover {
     }
     
     .series .names img {
-        width: 200px; /* На мобильных можно оставить крупнее */
+        width: 200px;
     }
 }
 
@@ -459,7 +459,6 @@ header nav ul li:not(.active) a:hover {
 
 /* Other */
 
-/* Other container styles */
 .other.container {
     padding: 100px 0 50px;
     display: flex;
@@ -513,7 +512,6 @@ header nav ul li:not(.active) a:hover {
     to { width: 100%; }
 }
 
-/* Mobile styles */
 @media (max-width: 768px) {
     .other.container {
         flex-direction: column;
