@@ -2,12 +2,16 @@
 const products = [
     { id: 1, name: "Куб 1x1", price: 0.1, image: "img/cube1x1.webp" },
     { id: 2, name: "Куб 2x2", price: 0.15, image: "img/cube2x2.jpg" },
-    { id: 3, name: "Горка 1x2", price: 0.15, image: "img/slide1x2.webp" },
+    { id: 3, name: "Горка 2x1", price: 0.15, image: "img/slide1x2.webp" },
     { id: 4, name: "Куб 2x4", price: 0.2, image: "img/cube2x4.jpg" },
     { id: 5, name: "Куб 1x6", price: 0.2, image: "img/cube1x6.webp" },
     { id: 6, name: "Пластина 2x4", price: 0.15, image: "img/plastin2x4.webp" },
     { id: 7, name: "Штурмовик", price: 3, image: "img/storm.webp" },
-    { id: 8, name: "Вейдер", price: 5, image: "img/vaider.webp" }
+    { id: 8, name: "Вейдер", price: 5, image: "img/vaider.webp" },
+    { id: 9, name: "Кай", price: 3, image: "img/kai.webp" },
+    { id: 10, name: "Бластер", price: 0.5, image: "img/blaster.jpg" },
+    { id: 11, name: "Динамит", price: 0.45, image: "img/dynamite.jpg" },
+    { id: 12, name: "100 BUCKS", price: 0.1, image: "img/money.webp" }
 ];
 
 // Загрузка товаров на страницу
