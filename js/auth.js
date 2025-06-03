@@ -1,39 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // В начале файла (после загрузки DOM)
-const authContainer = document.getElementById('auth-container');
-const profileContainer = document.getElementById('profileContainer');
-const profileName = document.getElementById('profileName');
-const profileEmail = document.getElementById('profileEmail');
-const logoutBtn = document.getElementById('logoutBtn');
-const accountText = document.getElementById('account-text');
-
-// Проверяем, авторизован ли пользователь
-const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-
-if (currentUser) {
-    // Показываем профиль
-        authContainer.style.display = 'none';
-        profileContainer.style.display = 'block';
-        profileName.textContent = currentUser.name;
-        profileEmail.textContent = currentUser.email;
-        
-        // Обновляем текст в шапке
-        if (accountText) {
-            accountText.textContent = currentUser.name;
-        }
-    } else {
-        // Показываем формы авторизации
-        authContainer.style.display = 'block';
-        profileContainer.style.display = 'none';
-    }
-
-    // Обработчик выхода
-    logoutBtn.addEventListener('click', function() {
-        localStorage.removeItem('currentUser');
-        window.location.href = 'account.html'; // Перезагружаем страницу
-    });
-
-// Остальной код (формы входа/регистрации) остается без изменений
     // Переключение между вкладками
     const tabs = document.querySelectorAll('.auth-tab');
     tabs.forEach(tab => {
@@ -104,13 +69,14 @@ if (currentUser) {
         
         if (user) {
             showMessage('Вход выполнен успешно!', 'success');
-    localStorage.setItem('currentUser', JSON.stringify(user));
-    
-    // Показываем профиль и скрываем формы
-    document.querySelector('.auth-container').style.display = 'none';
-    profileContainer.style.display = 'block';
-    profileName.textContent = user.name;
-    profileEmail.textContent = user.email;
+            
+            // Сохраняем данные о текущем пользователе
+            localStorage.setItem('currentUser', JSON.stringify(user));
+            
+            // Перенаправляем на главную страницу через 1 секунду
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 1000);
         } else {
             showMessage('Неверный email или пароль', 'error');
         }
