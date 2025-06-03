@@ -26,6 +26,7 @@ img {
 
 .wrapper {
     background-color: white;
+    padding-top: 120px;
 }
 
 .container {
@@ -33,9 +34,16 @@ img {
 }
 
 header {
+    position: fixed; /* Фиксированное позиционирование */
+    top: 0; /* Прижимаем к верхнему краю */
+    left: 0;
+    right: 0;
+    width: 100%; /* На всю ширину */
+    z-index: 1000; /* Чтобы шапка была поверх других элементов */
     padding: 30px 0;
     height: 60px;
     background-color: rgb(158, 24, 24);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Необязательно: добавляет тень для эффекта "плавающей" шапки */
 }
 
 header .logo {
@@ -216,11 +224,16 @@ header nav ul li:not(.active) a:hover {
 }
 
 @media (max-width: 768px) {
+    .wrapper {
+        padding-top: 0; /* Важно убрать отступ */
+    }
+
     header {
-        height: auto;
+        position: relative; /* Изменяем на relative вместо static */
+        top: auto;
         padding: 15px 0;
-        width: 100%;
-        box-sizing: border-box;
+        height: auto;
+        box-shadow: none;
     }
     
     header .logo {
