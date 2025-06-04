@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поддержка - AnyBricks</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/support.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="container">
+            <span class="logo">ANYBRICKS</span>
+            <nav>
+                <ul>
+                    <div class="search-bar">
+                        <input type="text" placeholder="ПОИСК ДЕТАЛИ">
+                    </div>
+                    <li><a href="index.html">ГЛАВНАЯ</a></li>
+                    <li><a href="catalog.html">КАТАЛОГ</a></li>
+                    <li><a href="discounts.html">СКИДКИ</a></li>
+                    <li><a href="account.html">АККАУНТ</a></li>
+                    <li><a href="basket.html">КОРЗИНА</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="support-container">
+            <h1>СЛУЖБА ПОДДЕРЖКИ</h1>
+            
+            <div class="support-info">
+                <div class="support-card">
+                    <i class="fas fa-question-circle"></i>
+                    <h3>ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ</h3>
+                    <div class="faq-list">
+                        <div class="faq-item">
+                            <button class="faq-question">Как отследить мой заказ?</button>
+                            <div class="faq-answer">
+                                <p>После отправки заказа вы получите трек-номер для отслеживания на указанную почту. Также вы можете проверить статус в личном кабинете.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">Какие способы оплаты доступны?</button>
+                            <div class="faq-answer">
+                                <p>Мы принимаем банковские карты (Visa, Mastercard), электронные деньги (WebMoney, Яндекс.Деньги), а также наличные при самовывозе.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">Как вернуть товар?</button>
+                            <div class="faq-answer">
+                                <p>Возврат возможен в течение 14 дней с момента получения заказа. Пожалуйста, свяжитесь с нами для оформления возврата.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="support-card">
+                    <i class="fas fa-headset"></i>
+                    <h3>СВЯЗАТЬСЯ С ПОДДЕРЖКОЙ</h3>
+                    <div class="contact-methods">
+                        <p><i class="fas fa-phone"></i> +375 (29) 502-67-77 (с 9:00 до 18:00)</p>
+                        <p><i class="fas fa-envelope"></i> support@anybricks.com</p>
+                        <p><i class="fab fa-telegram"></i> @anybricks_support</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="support-form-container">
+                <h2>ФОРМА ОБРАЩЕНИЯ В ПОДДЕРЖКУ</h2>
+                <form id="supportForm">
+                    <div class="form-group">
+                        <label for="support-name">Ваше имя</label>
+                        <input type="text" id="support-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="support-email">Email для ответа</label>
+                        <input type="email" id="support-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="support-subject">Тема обращения</label>
+                        <select id="support-subject" required>
+                            <option value="">Выберите тему</option>
+                            <option value="order">Вопрос по заказу</option>
+                            <option value="payment">Проблемы с оплатой</option>
+                            <option value="delivery">Доставка</option>
+                            <option value="technical">Техническая проблема</option>
+                            <option value="other">Другое</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="support-message">Подробное описание проблемы</label>
+                        <textarea id="support-message" rows="5" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="support-file">Прикрепить файл (необязательно)</label>
+                        <input type="file" id="support-file">
+                    </div>
+                    <button type="submit" class="submit-btn">ОТПРАВИТЬ ОБРАЩЕНИЕ</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/support.js"></script>
+</body>
+</html>

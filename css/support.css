@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+
+.support-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.support-container h1 {
+    text-align: center;
+    color: #e74c3c;
+    margin-bottom: 40px;
+    font-size: 32px;
+}
+
+.support-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.support-card {
+    background-color: #f8f8f8;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.support-card i {
+    font-size: 36px;
+    color: #e74c3c;
+    margin-bottom: 15px;
+    display: block;
+    text-align: center;
+}
+
+.support-card h3 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+}
+
+.faq-question {
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    padding: 10px 0;
+    font-weight: bold;
+    color: #2c3e50;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-question:after {
+    content: '+';
+    font-size: 20px;
+}
+
+.faq-question.active:after {
+    content: '-';
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    color: #555;
+    line-height: 1.6;
+}
+
+.contact-methods p {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    color: #555;
+}
+
+.contact-methods i {
+    font-size: 20px;
+    margin-right: 10px;
+    color: #e74c3c;
+    display: inline-block;
+    width: 25px;
+    text-align: center;
+}
+
+.support-form-container {
+    background-color: #f8f8f8;
+    padding: 30px;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+
+.support-form-container h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group input[type="file"] {
+    padding: 5px;
+}
+
+.submit-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    margin: 30px auto 0;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #c0392b;
+}
+
+@media (max-width: 768px) {
+    .support-info {
+        grid-template-columns: 1fr;
+    }
+    
+    .support-container {
+        padding: 0 15px;
+    }
+}
