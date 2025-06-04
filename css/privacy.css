@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+
+.privacy-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.privacy-container h1 {
+    text-align: center;
+    color: #e74c3c;
+    margin-bottom: 40px;
+    font-size: 32px;
+}
+
+.privacy-section {
+    margin-bottom: 30px;
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 5px;
+    border-left: 4px solid #e74c3c;
+}
+
+.privacy-section h2 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.privacy-section p {
+    line-height: 1.6;
+    color: #555;
+}
+
+.privacy-update {
+    text-align: right;
+    font-style: italic;
+    color: #777;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+}
+
+@media (max-width: 768px) {
+    .privacy-container {
+        padding: 0 15px;
+    }
+    
+    .privacy-section {
+        padding: 15px;
+    }
+}
