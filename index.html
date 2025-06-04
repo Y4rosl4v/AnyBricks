@@ -84,18 +84,6 @@
     </div>
 
     </div>
-
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-        const userGreeting = document.getElementById('user-greeting');
-        
-        if (currentUser) {
-            userGreeting.style.display = 'block';
-            document.getElementById('username').textContent = currentUser.name;
-        }
-    });
-</script>
 </body>
 
 </html>

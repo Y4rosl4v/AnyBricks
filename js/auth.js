@@ -7,15 +7,20 @@ document.addEventListener('DOMContentLoaded', function() {
     if (currentUser) {
         // Показываем профиль и скрываем формы авторизации
         if (authContainer) authContainer.style.display = 'none';
-        if (userProfile) {
-            userProfile.style.display = 'block';
-            document.getElementById('profile-name').textContent = currentUser.name;
-            document.getElementById('profile-email').textContent = currentUser.email;
+    if (userProfile) {
+        userProfile.style.display = 'block';
+        document.getElementById('profile-name').textContent = currentUser.name;
+        document.getElementById('profile-email').textContent = currentUser.email;
+        
+        // Показываем админскую панель, если это админ
+        if (currentUser.isAdmin) {
+            document.getElementById('admin-info').style.display = 'block';
+            document.getElementById('admin-products-btn').addEventListener('click', function() {
+                window.location.href = 'catalog.html';
+            });
         }
-    } else {
-        if (authContainer) authContainer.style.display = 'block';
-        if (userProfile) userProfile.style.display = 'none';
     }
+}
 
     // Обработчик кнопки выхода
     document.getElementById('logout-btn')?.addEventListener('click', function() {
@@ -83,29 +88,32 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Обработка формы входа
     const loginForm = document.getElementById('loginForm');
-    loginForm.addEventListener('submit', function(e) {
-        e.preventDefault();
+loginForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const email = document.getElementById('login-email').value;
+    const password = document.getElementById('login-password').value;
+    
+    // Поиск пользователя
+    const user = users.find(user => user.email === email && user.password === password);
+    
+    if (user) {
+        // Добавляем флаг админа, если это админская почта
+        user.isAdmin = (user.email === 'yarik.brest06@gmail.com');
         
-        const email = document.getElementById('login-email').value;
-        const password = document.getElementById('login-password').value;
+        showMessage('Вход выполнен успешно!', 'success');
         
-        // Поиск пользователя
-        const user = users.find(user => user.email === email && user.password === password);
+        // Сохраняем данные о текущем пользователе
+        localStorage.setItem('currentUser', JSON.stringify(user));
         
-        if (user) {
-            showMessage('Вход выполнен успешно!', 'success');
-            
-            // Сохраняем данные о текущем пользователе
-            localStorage.setItem('currentUser', JSON.stringify(user));
-            
-            // Перенаправляем на главную страницу через 1 секунду
-            setTimeout(() => {
-                window.location.href = 'account.html';
-            }, 1000);
-        } else {
-            showMessage('Неверный email или пароль', 'error');
-        }
-    });
+        // Перенаправляем на главную страницу через 1 секунду
+        setTimeout(() => {
+            window.location.href = 'account.html';
+        }, 1000);
+    } else {
+        showMessage('Неверный email или пароль', 'error');
+    }
+});
     
     // Функция для отображения сообщений
     function showMessage(text, type) {
