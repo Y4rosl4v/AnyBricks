@@ -1,5 +1,5 @@
 // Массив товаров
-const products = [
+const defaultProducts = [
     { id: 1, name: "Куб 1x1", price: 0.1, image: "img/cube1x1.webp" },
     { id: 2, name: "Куб 2x2", price: 0.15, image: "img/cube2x2.jpg" },
     { id: 3, name: "Горка 2x1", price: 0.15, image: "img/slide1x2.webp" },
@@ -14,24 +14,36 @@ const products = [
     { id: 12, name: "100 BUCKS", price: 0.1, image: "img/money.webp" }
 ];
 
+const userProducts = JSON.parse(localStorage.getItem('products')) || [];
+    const allProducts = [...defaultProducts, ...userProducts];
+
 // Загрузка товаров на страницу
 document.addEventListener('DOMContentLoaded', function() {
     const catalog = document.getElementById('catalog');
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
+    // Сохраняем продукты в глобальной переменной для использования в других функциях
+    window.products = allProducts;
     
-    products.forEach(product => {
+    allProducts.forEach(product => {
         const productCard = document.createElement('div');
         productCard.className = 'product-card';
         
+        // Проверяем, является ли текущий пользователь продавцом этого товара
+        const isSeller = currentUser && currentUser.email === product.seller;
+        
         productCard.innerHTML = `
             <div class="product-image-container">
-        <img src="${product.image}" alt="${product.name}" class="product-image">
-    </div>
-    <div class="product-info">
-        <h3 class="product-title">${product.name}</h3>
-        <p class="product-price">${product.price} BYN</p>
-        <button class="add-to-basket" data-id="${product.id}">ДОБАВИТЬ В КОРЗИНУ</button>
-    </div>
-`;
+                <img src="${product.image}" alt="${product.name}" class="product-image">
+            </div>
+            <div class="product-info">
+                <h3 class="product-title">${product.name}</h3>
+                <p class="product-price">${product.price} BYN</p>
+                ${isSeller 
+                    ? `<button class="remove-product" data-id="${product.id}">УДАЛИТЬ</button>` 
+                    : `<button class="add-to-basket" data-id="${product.id}">ДОБАВИТЬ В КОРЗИНУ</button>`}
+            </div>
+        `;
         
         catalog.appendChild(productCard);
     });
@@ -43,7 +55,6 @@ document.addEventListener('DOMContentLoaded', function() {
             addToBasket(productId);
         });
     });
-});
 
 // Функция добавления в корзину
 function addToBasket(productId) {
@@ -73,4 +84,36 @@ function addToBasket(productId) {
     localStorage.setItem('basket', JSON.stringify(basket));
     alert(`${product.name} добавлен в корзину!`);
     updateBasketCounter();
+}
+
+// Обработка удаления товара
+    document.querySelectorAll('.remove-product').forEach(button => {
+        button.addEventListener('click', function() {
+            const productId = parseInt(this.getAttribute('data-id'));
+            removeProduct(productId);
+        });
+    });
+});
+
+// Функция удаления товара
+function removeProduct(productId) {
+    if (!confirm('Вы уверены, что хотите удалить этот товар?')) return;
+    
+    // Удаляем из общего списка товаров
+    let products = JSON.parse(localStorage.getItem('products')) || [];
+    products = products.filter(product => product.id !== productId);
+    localStorage.setItem('products', JSON.stringify(products));
+    
+    // Удаляем из списка товаров пользователя
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    if (currentUser) {
+        let userProducts = JSON.parse(localStorage.getItem('userProducts')) || {};
+        if (userProducts[currentUser.email]) {
+            userProducts[currentUser.email] = userProducts[currentUser.email].filter(id => id !== productId);
+            localStorage.setItem('userProducts', JSON.stringify(userProducts));
+        }
+    }
+    
+    // Обновляем страницу
+    location.reload();
 }

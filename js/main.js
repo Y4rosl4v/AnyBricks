@@ -5,9 +5,16 @@ function checkAuth() {
 
 // Функция для перенаправления на страницу входа
 function redirectToLogin() {
-    if (!checkAuth() && window.location.pathname.includes('basket.html')) {
-        alert('Пожалуйста, войдите в систему, чтобы получить доступ к корзине');
-        window.location.href = 'account.html';
+    const currentPage = window.location.pathname.split('/').pop();
+    
+    if (!checkAuth()) {
+        if (currentPage === 'basket.html') {
+            alert('Пожалуйста, войдите в систему, чтобы получить доступ к корзине');
+            window.location.href = 'account.html';
+        } else if (currentPage === 'sell.html') {
+            alert('Пожалуйста, войдите в систему, чтобы продавать товары');
+            window.location.href = 'account.html';
+        }
     }
 }
 

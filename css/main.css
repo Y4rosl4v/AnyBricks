@@ -535,3 +535,29 @@ header nav ul li:not(.active) a:hover {
         left: 25%;
     }
 }
+
+/* Стиль для кнопки удаления товара */
+.remove-product {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #ff3333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.remove-product:hover {
+    background-color: #cc0000;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.remove-product:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
