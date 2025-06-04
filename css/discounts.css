@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+
+.discounts-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    padding: 20px;
+}
+
+.no-discounts-message {
+    text-align: center;
+    max-width: 600px;
+    padding: 40px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.no-discounts-message h2 {
+    color: #e74c3c;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.no-discounts-message p {
+    color: #555;
+    font-size: 18px;
+}

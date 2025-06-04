@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Каталог - AnyBricks</title>
+    <title>Скидки - AnyBricks</title>
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/catalog.css">
+    <link rel="stylesheet" href="css/discounts.css">
 </head>
 <body>
     <div class="wrapper">
@@ -17,20 +17,22 @@
                         <input type="text" placeholder="ПОИСК ДЕТАЛИ">
                     </div>
                     <li><a href="index.html">ГЛАВНАЯ</a></li>
-                    <li class="active"><a href="catalog.html">КАТАЛОГ</a></li>
-                    <li><a href="discounts.html">СКИДКИ</a></li>
+                    <li><a href="catalog.html">КАТАЛОГ</a></li>
+                    <li class="active"><a href="discounts.html">СКИДКИ</a></li>
                     <li><a href="account.html">АККАУНТ</a></li>
                     <li><a href="basket.html">КОРЗИНА</a></li>
                 </ul>
             </nav>
         </header>
 
-        <div class="catalog" id="catalog">
-            <!-- Товары будут загружаться через JavaScript -->
+        <div class="discounts-container">
+            <div class="no-discounts-message">
+                <h2>НА ДАННЫЙ МОМЕНТ ТОВАРОВ СО СКИДКОЙ НЕТ</h2>
+                <p>Следите за нашими акциями, возможно, скоро появятся специальные предложения!</p>
+            </div>
         </div>
     </div>
 
     <script src="js/main.js"></script>
-    <script src="js/catalog.js"></script>
 </body>
 </html>
